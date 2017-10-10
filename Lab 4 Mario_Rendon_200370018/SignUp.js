@@ -14,7 +14,12 @@ function isValid()
  if(emailValidation(email, "Please Enter your email address in this username@somewhere.sth")){
    if(userValid(username, "Please Enter your Username format(No leading or trailing spaces)")){
      if(passLength(password, "Please Enter the passord correctly (8 characters long, at least one non-letter)")){
-       if(matchingPass(passord, confirmPass, "The confirmed password should be the same as the password above")){
+       if(matchingPass(password, confirmPass, "The confirmed password should be the same as the password above")){
+         document.getElementById('display-info').innerHTML = "DISPLAY INFORMATION:";
+         document.getElementById('S1').innerHTML = "Email: " + email;
+         document.getElementById('S2').innerHTML = "Username: " + username;
+         document.getElementById('S3').innerHTML = "Password: " + password;
+         document.getElementById('S4').innerHTML = "Confirm Passwords: " + confirmPass;
          return true;
        }
      }
@@ -49,8 +54,7 @@ function passLength(password, message){
 var pass_check= /^[A-Za-z0-9_@#$%!*&]{8}$/;
 if(password.match(pass_check)){
     return true;
-    }
-} else{
+  } else{
   document.getElementById('T2').innerHTML = message;
   document.forms["sign-up-form"]["password"].focus();
   return false;
@@ -58,5 +62,11 @@ if(password.match(pass_check)){
 };
 
 function matchingPass(password, confirmPass, message){
-
+  if(confirmPass.match(password)){
+    return true;
+  } else {
+    document.getElementById('T3').innerHTML = message;
+    document.forms["sign-up-form"]["confirm"].focus();
+    return false;
+  }
 };

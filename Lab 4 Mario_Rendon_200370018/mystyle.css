@@ -85,3 +85,7 @@ form input:focus{
 	color: #FA4C48;
 	text-decoration: underline;
 }
+
+.successful {
+	text-align: center;
+}
