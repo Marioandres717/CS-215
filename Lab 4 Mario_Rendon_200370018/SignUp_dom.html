@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns = "http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="US-ASCII">
+<title>signup</title>
+<link rel="stylesheet" type="text/css" href="smalldevices.css">
+<link rel="stylesheet" type="text/css" href="largerdevices.css">
+<link rel="stylesheet" type="text/css" href="mystyle.css">
+<link href="https://fonts.googleapis.com/css?family=Asap+Condensed" rel="stylesheet">
+</head>
+<body>
+
+<div class="form">
+		<h1 id="signup-header">SIGN UP</h1>
+		<p id="head"></p>
+		<form  name="sign-up-form" onsubmit="return isValid()">
+			<input type="text" name="email" placeholder="Email">
+			<p id="T1"></p>
+			<input type="text" name="username" placeholder="Username">
+			<p id="T2"></p>
+			<input type="password" name="password" placeholder="Password">
+			<p id="T3"></p>
+			<input type="password" name="confirm" placeholder="Confirm Password">
+			<input type="submit" value="SIGN UP!">
+		</form>
+
+		<p id="signup-footer">Back to my main<a class="back_link" href="index.html"> page!</a></p>
+</div>
+
+<script type="text/javascript" src="SignUp.js">
+
+</script>
+</body>
+</html>
