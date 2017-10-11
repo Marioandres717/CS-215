@@ -20,7 +20,7 @@ function isValid()
          document.getElementById('S2').innerHTML = "Username: " + username;
          document.getElementById('S3').innerHTML = "Password: " + password;
          document.getElementById('S4').innerHTML = "Confirm Passwords: " + confirmPass;
-         return true;
+        // return true;  // I COMMENT THIS LINE SO THE OUTPUT OF THE VALIDATION STAYS ON THE PAGE
        }
      }
    }
@@ -40,7 +40,7 @@ if(email.match(email_check)){
 };
 
 function userValid(username, message){
-var user_check = /^[0-9a-zA-Z]+$/;
+var user_check = /[0-9a-zA-Z]/g;
 if(username.match(user_check)){
   return true;
 } else{
@@ -51,14 +51,13 @@ if(username.match(user_check)){
 };
 
 function passLength(password, message){
-var pass_check= /^[A-Za-z0-9_@#$%!*&]{8}$/;
-if(password.match(pass_check)){
+  if(password.match(/[^a-zA-Z ]/g) && password.match(/[A-Za-z0-9_!@#$%^&()*~-]/g).length == 8){
     return true;
   } else{
   document.getElementById('T2').innerHTML = message;
   document.forms["sign-up-form"]["password"].focus();
   return false;
-}
+    }
 };
 
 function matchingPass(password, confirmPass, message){
