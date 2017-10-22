@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Login</title>
+    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="public/dope.css">
+  </head>
+  <body>
+    <nav class="top-nav">
+      <p class="brand"><i class="fa fa-telegram" aria-hidden="true"></i> BlueIvy</p>
+      <a href="#">Login</a>
+      <a href="#">Sign up</a>
+    </nav>
+    <div class="login">
+      <h1>Login</h1>
+      <form class="login_form" action="index.html" method="post">
+        <input type="text" name="email" placeholder="Email"/>
+        <input type="password" name="password" placeholder="Password"/>
+        <input type="submit" class="login_btn default-page" value="Login"/>
+      </form>
+      <a href="#" class="forgot_pass">Forgot password?</a>
+      <button type="button" class="login_btn default-page">Create account</button>
+      <p>Create an account with your email address</p>
+    </div>
+
+    <div class="passcode">
+      <h1>View a message</h1>
+      <p>(optional)</p>
+      <form action="index.html" method="post">
+        <input type="text" name="passcode" placeholder="Passcode"/>
+        <input type="submit" class="default-page" value="View"/>
+      </form>
+      <ul>
+        <li>Please, enter the passcode a sender informed you about.</li>
+        <li>It is necessary in order to view your new messages.</li>
+        <li>BlueIvy's <strong>cares</strong> in keeping user's communitcation cofidential and secure.</li>
+      </ul>
+    </div>
+  </body>
+</html>
