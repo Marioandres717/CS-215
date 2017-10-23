@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="public/dope.css">
+    <script type="text/javascript" src="public/js/functionality.js"></script>
+  </head>
+  <body>
+    <nav class="top-nav">
+      <p class="brand"><i class="fa fa-telegram" aria-hidden="true"></i> BlueIvy</p>
+      <a href="#">Login</a>
+      <a href="#">Sign up</a>
+    </nav>
+    <div class="login">
+      <h1>Login</h1>
+      <form class="login_form" action="index.html" method="post">
+        <span id="email_id"></span>
+        <input type="text" id="email" placeholder="Email"/>
+        <span id="password_id"></span>
+        <input type="password" id="password" placeholder="Password"/>
+        <input type="submit" id="login_btn default-page" value="Login"/>
+      </form>
+      <a href="#" class="forgot_pass">Forgot password?</a>
+      <button type="button" class="login_btn default-page">Create account</button>
+      <p>Create an account with your email address</p>
+    </div>
+
+    <div class="passcode">
+      <h1>View a message</h1>
+      <p>(optional)</p>
+      <form action="index.html" method="post">
+        <input type="text" id="passcode" placeholder="Passcode"/>
+        <input type="submit" id="default-page" value="View"/>
+      </form>
+      <ul>
+        <li>Please, enter the passcode a sender informed you about.</li>
+        <li>It is necessary in order to view your new messages.</li>
+        <li>BlueIvy's <strong>cares</strong> in keeping user's communitcation cofidential and secure.</li>
+      </ul>
+    </div>
+
+    <script>
+      var loginForm = document.getElementsByClassName("login_form");
+         for(i = 0; i<loginForm.length; i++){
+           loginForm[0].addEventListener("submit", validate, false);
+         }
+      var passCode = document.getElementsByClassName("passcode");
+        for(j = 0; j<passCode.length; j++){
+          passCode[0].addEventListener("submit", passValidate, false);
+        }
+    </script>
+  </body>
+</html>
