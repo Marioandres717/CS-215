@@ -178,8 +178,11 @@ hr {
 /*******************
  SIGN UP PAGE
 *******************/
-.signup form input {
+.signup label{
   display: block;
+}
+.signup form input {
+  display: inline-block;
   margin: 5px;
   padding: 5px;
   width: 200px;
@@ -198,6 +201,7 @@ fieldset {
 
 .signup .login_btn{
   margin: 10px 5px;
+  display: block;
 }
 /*******************
  INDEX PAGE
@@ -280,4 +284,9 @@ table td {
 .message-content form .default-page{
   padding: 10px 20px;
 
+}
+
+.error{
+  color: red;
+  text-decoration: underline;
 }

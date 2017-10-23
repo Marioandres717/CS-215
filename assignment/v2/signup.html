@@ -3,10 +3,8 @@
   <head>
     <meta charset="utf-8">
     <title>Sign up</title>
-    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Ubuntu:400,700" rel="stylesheet">
     <link rel="stylesheet" href="public/dope.css">
+    <script type="text/javascript" src="public/js/functionality.js"></script>
   </head>
   <body>
     <nav class="top-nav">
@@ -17,24 +15,27 @@
 
     <div class="signup">
       <h1>Sign up!</h1>
-        <form class="" action="signup.html" method="post">
+        <form id="signup_form" action="signup.html" method="post">
           <fieldset>
             <legend></legend>
             <label>First name: </label>
-            <input type="text" name="firstName"/>
+            <input type="text" id="firstName"/><span id="firstName_id" class="error"></span>
             <label>Last name: </label>
-            <input type="text" name="lastName"/>
+            <input type="text" id="lastName"/><span id="lastName_id" class="error"></span>
             <label>Email: </label>
-            <input type="email" name="emailAddress"/>
-            <label>Date of birth: </label>
-            <input type="date" name="dateOfBirth" />
+            <input type="email" id="email"/><span id="email_id" class="error"></span>
+            <label>Date of birth <span>(yyyy-mm-dd) </span>: </label>
+            <input type="date" id="dateOfBirth" /><span id="dateOfBirth_id" class="error"></span>
             <label>Password: </label>
-            <input type="password" name="password"/>
+            <input type="password" id="password"/><span id="password_id" class="error"></span>
             <label>Repeat password: </label>
-            <input type="password" name="repeatPassword"/>
+            <input type="password" id="repeatPassword"/><span id="repeatPassword_id" class="error"></span>
             <button type="submit" class="login_btn default-page">sign up</button>
           </fieldset>
         </form>
     </div>
+    <script>
+        document.getElementById("signup_form").addEventListener("submit", signUpValidation, false);
+      </script>
   </body>
 </html>

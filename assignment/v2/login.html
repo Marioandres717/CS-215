@@ -15,9 +15,9 @@
     <div class="login">
       <h1>Login</h1>
       <form class="login_form" action="index.html" method="post">
-        <span id="email_id"></span>
+        <span id="email_id" class="error"></span>
         <input type="text" id="email" placeholder="Email"/>
-        <span id="password_id"></span>
+        <span id="password_id" class="error"></span>
         <input type="password" id="password" placeholder="Password"/>
         <input type="submit" id="login_btn default-page" value="Login"/>
       </form>
@@ -29,7 +29,8 @@
     <div class="passcode">
       <h1>View a message</h1>
       <p>(optional)</p>
-      <form action="index.html" method="post">
+      <form class="passcode_form"action="index.html" method="post">
+        <span id="passcode_id" class="error"></span>
         <input type="text" id="passcode" placeholder="Passcode"/>
         <input type="submit" id="default-page" value="View"/>
       </form>
@@ -43,12 +44,12 @@
     <script>
       var loginForm = document.getElementsByClassName("login_form");
          for(i = 0; i<loginForm.length; i++){
-           loginForm[0].addEventListener("submit", validate, false);
+           loginForm[i].addEventListener("submit", loginValidation, false);
          }
-      var passCode = document.getElementsByClassName("passcode");
-        for(j = 0; j<passCode.length; j++){
-          passCode[0].addEventListener("submit", passValidate, false);
-        }
+       var passForm = document.getElementsByClassName("passcode_form");
+          for(j = 0; j<passForm.length; j++){
+            passForm[j].addEventListener("submit", passValidate, false);
+          }
     </script>
   </body>
 </html>
