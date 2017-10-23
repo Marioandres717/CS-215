@@ -68,6 +68,30 @@ function checkConfirmPass(originalPass, ConfirmPass){
   return true;
 }
 
+function checkRecipientEmail(recipient){
+  if(recipient == "" || recipient == null){
+    document.getElementById("recipient-email_id").innerHTML = "Enter a valid recipient";
+    return false;
+  }
+  document.getElementById("recipient-email_id").innerHTML = "";
+  return true;
+};
+
+function checkContentOfMsg(content){
+  if(content == "" || content == null){
+    document.getElementById("message_id").innerHTML = "Cannot send empty messages";
+    return false;
+  }
+  document.getElementById("message_id").innerHTML = "";
+  return true;
+};
+
+function charCounter(event){
+  var numberOfChar = event.currentTarget;
+  document.getElementById('message_id').innerHTML = " Characters left: " + (500 - numberOfChar.value.length);
+};
+
+
 
 // LOGIN PAGE FUNCTIONS
 function loginValidation(event){
@@ -101,4 +125,22 @@ function signUpValidation(event){
 };
 
 // POST MESSAGE FUNCTIONS
-function
+function messageValidation(event){
+  var recipient = checkRecipientEmail(document.getElementById("recipientEmail").value);
+  var message = checkContentOfMsg(document.getElementById("message").value);
+  var passcode = checkPasscode(document.getElementById("passcode").value);
+
+  if(recipient == false || message == false || passcode == false){
+    event.preventDefault();
+  }
+};
+
+// REPLY MESSAGE FUNCTIONS
+function ReplyValidation(event){
+  var recipient = checkRecipientEmail(document.getElementById("recipientEmail").value);
+  var message = checkContentOfMsg(document.getElementById("message").value);
+
+  if(recipient == false || message == false){
+    event.preventDefault();
+  }
+};
