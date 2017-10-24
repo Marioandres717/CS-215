@@ -83,7 +83,8 @@ input[type="text"], input[type="password"], input[type="date"], input[type="emai
 , textarea{
   background: #CED2DE;
 }
-input:focus, textarea:focus {
+input[type="text"]:focus, input[type="password"]:focus, textarea:focus,
+ input[type="date"]:focus, input[type="email"]:focus {
   border: 5px solid #7C85EA;
 }
 
@@ -93,6 +94,29 @@ textarea{
 
 hr {
   margin: 20px 0;
+}
+
+.default-page {
+  background-color: #F02479;
+  color: #FEFFFF;
+  border: 0;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  box-shadow: 0 4px #E05499;
+  border-radius: 10px;
+}
+
+.default-page:hover{
+ box-shadow: 0 2px #E05499;
+ top: 2px;
+}
+
+.default-page:active{
+  box-shadow: 0 0 #E05499;
+  top: 6px;
 }
 /*******************
  lOGIN PAGE
@@ -170,11 +194,6 @@ hr {
   color: #FEFFFF;
 }
 
-.default-page {
-  background-color: #F02479;
-  color: #FEFFFF;
-  border: 0;
-}
 /*******************
  SIGN UP PAGE
 *******************/
