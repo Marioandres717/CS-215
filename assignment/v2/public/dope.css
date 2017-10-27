@@ -107,6 +107,7 @@ hr {
   text-transform: uppercase;
   box-shadow: 0 4px #a80549;
   border-radius: 10px;
+  margin: 10px;
 }
 
 .default-page:hover{
@@ -269,9 +270,10 @@ table td {
   margin-top: 0;
 }
 
-.new-message input[type="submit"]{
+.new-message button{
   border: 0;
   padding: 10px 20px;
+  display: block;
 }
 
 .new-message input, .message-content form input{
