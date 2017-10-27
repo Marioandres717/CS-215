@@ -22,13 +22,13 @@
     <div class="new-message">
       <h1>New message</h1>
       <form id="post_msg" action="index.html" method="post">
-        <label>To:</label>
-        <input type="text" class="recipient-email" id="recipientEmail"/><span id="recipient-email_id"></span>
+        <label>To: </label><span id="recipient-email_id" class="error"></span>
+        <input type="text" class="recipient-email" id="recipientEmail"/>
         <textarea id="message" rows="10" cols="50" placeholder="Your text goes here..."></textarea>
-        <span id="message_id"></span>
+        <span id="message_id" class="error"></span>
         <input type="submit" class="default-page" id="upload" value="Upload"/>
         <label>Passcode: </label>
-        <input type="text" id="passcode"><span id="passcode_id"></span>
+        <input type="text" id="passcode"><span id="passcode_id" class="error"></span>
         <input type="submit" class="default-page" id="sendMsg" value="Send"/>
       </form>
     </div>

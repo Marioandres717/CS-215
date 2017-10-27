@@ -105,17 +105,17 @@ hr {
   position: relative;
   letter-spacing: 1px;
   text-transform: uppercase;
-  box-shadow: 0 4px #E05499;
+  box-shadow: 0 4px #a80549;
   border-radius: 10px;
 }
 
 .default-page:hover{
- box-shadow: 0 2px #E05499;
+ box-shadow: 0 2px #a80549;
  top: 2px;
 }
 
 .default-page:active{
-  box-shadow: 0 0 #E05499;
+  box-shadow: 0 0 #a80549;
   top: 6px;
 }
 /*******************
@@ -293,7 +293,7 @@ table td {
   background-color: #292A46;
   color: #FEFFFF;
 }
-.message-content span {
+.sender-info {
   display: block;
   font-weight: 700;
   color: #FEFFFF;
@@ -308,4 +308,5 @@ table td {
 .error{
   color: red;
   text-decoration: underline;
+  display: block;
 }

@@ -11,7 +11,7 @@ function checkEmail(email){
 };
 
 function checkPassword(password){
-  var password_v = /^[a-zA-Z0-9_]{8,}$/;  // HAVE TO CHANGE
+  var password_v = /^(?=.*[0-9!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,}$/;  // HAVE TO CHANGE
 
   if(password == "" || password == null || !password_v.test(password)){
     document.getElementById("password_id").innerHTML = "Password Must be 8 characters or longer";

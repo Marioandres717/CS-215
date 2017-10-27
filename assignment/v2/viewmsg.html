@@ -21,9 +21,9 @@
    </div>
 
     <div class="message-content">
-      <span>Redbone </span>
-      <span>FakeEmail123@thagod.com</span>
-      <span>10-21-2016</span>
+      <span class="sender-info">Redbone </span>
+      <span class="sender-info">FakeEmail123@thagod.com</span>
+      <span class="sender-info">10-21-2016</span>
       <h3>Message Subject</h3>
       <p>Hip hop or hip-hop is a subculture and art movement developed in South Bronx in New York City during the late 1970s.[1][2][3][4][5] While people unfamiliar with hip hop culture often use the expression "hip hop" to refer exclusively to hip hop music (also called "rap"),[6] Hip hop is characterized by nine distinct elements or expressive realms, of which hip hop music is only four elements (rapping, djaying, beatboxing and breaking). Afrika Bambaataa of the hip hop collective Zulu Nation outlined the pillars of hip hop culture, coining the terms: "rapping" (also called MCing or emceeing), a rhythmic vocal rhyming style (orality); DJing (and turntablism), which is making music with record players and DJ mixers (aural/sound and music creation); b-boying/b-girling/breakdancing (movement/dance); and graffiti art, which he called "aerosol writin'", although many say that the graffiti that hip hop adopted had been around years earlier, and had nothing to do with hip hop culture.
       </p>
@@ -31,10 +31,10 @@
     <hr>
 
       <form id="replay_msg" action="index.html" method="post">
-        <label>To:</label><span id="recipient-email_id"></span>
+        <label>To: </label><span id="recipient-email_id" class="error"></span>
         <input type="text" id="recipientEmail" class="recipient-email" value="FakeEmail123@thagod.com">
         <textarea id="message" rows="10" cols="50" maxlength="500" placeholder="YOU text goes here..."></textarea>
-        <span id="message_id"></span>
+        <span id="message_id" class="error"></span>
         <input type="submit" class="default-page" id="upload" value="Upload">
         <input type="submit" class="default-page" value="Respond">
       </form>
