@@ -18,24 +18,22 @@
         <form id="signup_form" action="signup.html" method="post">
           <fieldset>
             <legend></legend>
-            <label>First name: </label>
-            <input type="text" id="firstName"/><span id="firstName_id" class="error"></span>
-            <label>Last name: </label>
-            <input type="text" id="lastName"/><span id="lastName_id" class="error"></span>
-            <label>Email: </label>
-            <input type="email" id="email"/><span id="email_id" class="error"></span>
-            <label>Date of birth <span>(yyyy-mm-dd) </span>: </label>
-            <input type="date" id="dateOfBirth" /><span id="dateOfBirth_id" class="error"></span>
-            <label>Password: </label>
-            <input type="password" id="password"/><span id="password_id" class="error"></span>
-            <label>Repeat password: </label>
-            <input type="password" id="repeatPassword"/><span id="repeatPassword_id" class="error"></span>
+            <label>First name: </label><span id="firstName_id" class="error"></span>
+            <input type="text" id="firstName"/>
+            <label>Last name: </label><span id="lastName_id" class="error"></span>
+            <input type="text" id="lastName"/>
+            <label>Email: </label><span id="email_id" class="error"></span>
+            <input type="email" id="email"/>
+            <label>Date of birth <span>(yyyy-mm-dd) </span>: </label><span id="dateOfBirth_id" class="error"></span>
+            <input type="date" id="dateOfBirth" />
+            <label>Password: </label><span id="password_id" class="error"></span>
+            <input type="password" id="password"/>
+            <label>Repeat password: </label><span id="repeatPassword_id" class="error"></span>
+            <input type="password" id="repeatPassword"/>
             <button type="submit" class="login_btn default-page">sign up</button>
           </fieldset>
         </form>
     </div>
-    <script type="text/javascript">
-        document.getElementById("signup_form").addEventListener("submit", signUpValidation, false);
-      </script>
+    <script type="text/javascript" src="public/js/signup.js"></script>
   </body>
 </html>

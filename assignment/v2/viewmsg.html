@@ -34,14 +34,11 @@
         <label>To: </label><span id="recipient-email_id" class="error"></span>
         <input type="text" id="recipientEmail" class="recipient-email" value="FakeEmail123@thagod.com">
         <textarea id="message" rows="10" cols="50" maxlength="500" placeholder="YOU text goes here..."></textarea>
-        <span id="message_id" class="error"></span>
+        <span id="message_id"></span>
         <input type="submit" class="default-page" id="upload" value="Upload">
         <input type="submit" class="default-page" value="Respond">
       </form>
     </div>
-    <script type="text/javascript">
-      document.getElementById("replay_msg").addEventListener("submit", ReplyValidation, false);
-      document.getElementById("message").addEventListener("keyup", charCounter, false);
-    </script>
+    <script type="text/javascript" src="public/js/viewmsg.js"></script>
   </body>
 </html>

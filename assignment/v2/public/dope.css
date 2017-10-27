@@ -284,6 +284,11 @@ table td {
     color: #FEFFFF;
 }
 
+#message_id{
+  display: block;
+}
+
+
 /*******************
  VIEW/RETRIEVE MESSAGE PAGE
 *******************/
