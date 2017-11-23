@@ -1,0 +1,35 @@
+CREATE TABLE users( 
+email VARCHAR(500) NOT NULL,
+first_name VARCHAR(128) NOT NULL,
+last_name VARCHAR (128) NOT NULL, 
+DofB VARCHAR(128) NOT NULL,
+password VARCHAR(128) NOT NULL,
+PRIMARY KEY(email) 
+);
+
+
+CREATE TABLE message( 
+message_id INT NOT NULL AUTO_INCREMENT,
+email VARCHAR(500) NOT NULL,
+passcode VARCHAR(128) NOT NULL,
+msg_subject VARCHAR(500) NOT NULL,
+content VARCHAR(500) NOT NULL, 
+image VARCHAR(500),
+last_view VARCHAR(128),
+date_post VARCHAR(128) NOT NULL,
+time_post VARCHAR(128) NOT NULL,
+PRIMARY KEY (message_id),
+FOREIGN KEY (email) REFERENCES users (email)
+);
+
+CREATE TABLE reply(
+reply_id INT NOT NULL AUTO_INCREMENT,
+message_id INT NOT NULL,
+reply_subject VARCHAR(500) NOT NULL,
+content VARCHAR(500) NOT NULL,
+date_reply VARCHAR(128) NOT NULL,
+time_reply VARCHAR(128) NOT NULL,
+PRIMARY KEY (reply_id),
+FOREIGN KEY (message_id) REFERENCES message (message_id)
+);
+
