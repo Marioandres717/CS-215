@@ -1,0 +1,198 @@
+// CS207 Lab Test Template 1
+// Name: 
+// Student Number: 
+
+#include <EEPROM.h>
+
+const int data = 4;
+const int latch = 7;
+const int clock = 8;
+const int button1 = 10;
+const int button2 = 11;
+const int button3 = 12;
+const int slider1 = A2;
+const int slider2 = A1;
+const int slider3 = A0;
+const int buzzer = 3;
+const int LDR = A3;
+bool inCodeEntryMode = false;
+int lightMeter = 0;
+bool startMode = true;
+int button1State;
+int button2State;
+int button3State;
+int slider1Val;
+int slider2Val;
+int slider3Val;
+int numberOne;
+int numberTwo;
+int numberThree;
+bool startAnimationPlayed = false;
+//bool button1Pressed = false;
+//bool button2Pressed = false;
+//bool button3Pressed = false;
+const int matchNumberOne = 7;
+const int matchNumberTwo = 8;
+const int matchNumberThree = 9;
+bool playedTheSong = false;
+void setup()
+{
+  //Set up output pins 
+  pinMode(data, OUTPUT);
+  pinMode(latch, OUTPUT);
+  pinMode(clock, OUTPUT);
+  
+  //Set up button inputs
+  pinMode(button1, INPUT_PULLUP);
+  pinMode(button2, INPUT_PULLUP);
+  pinMode(button3, INPUT_PULLUP);
+  Serial.begin(9600);
+}
+
+int numberGlyphs[11] = 
+{
+  B11000000, //0
+  B11111001, //1
+  B10100100, //2
+  B10110000, //3
+  B10011001, //4
+  B10010010, //5
+  B10000010, //6
+  B11111000, //7
+  B10000000, //8
+  B10011000, //9
+  B11111111, //10 - CLEAR
+};
+
+int successSongNotes[18] = { 494,   0, 494,   0, 494,   0, 494,   0, 392,   0, 440,   0, 494,   0, 440,   0, 494,   0  };
+int successSongTimes[18] = { 100, 100, 100, 100, 100, 100, 500, 100, 500, 100, 500, 100, 100, 300, 100, 100,1700, 100  };
+
+
+void loop()
+{
+  ClearScreen(numberGlyphs[10]);
+  if(startMode == true)
+  {
+   
+
+  lightMeter = analogRead(LDR);
+  Serial.println(lightMeter);
+  if(lightMeter < 600)
+  {
+    startMode = false;
+    EEPROM.put(startMode, false);
+    EEPROM.put(inCodeEntryMode, true);
+    inCodeEntryMode = true;
+  }
+  }
+  
+  if (inCodeEntryMode == true)
+  {
+     if(startAnimationPlayed == false)
+     {
+    startAnimation();
+    startAnimationPlayed = true;
+   ClearScreen(numberGlyphs[10]);
+     }
+     //Serial.println("in code entry mode");
+     //Serial.print("the value of button:");
+   //  Serial.print(digitalRead(button1));
+   button1State = digitalRead(button1);
+   button2State = digitalRead(button2);
+   button3State = digitalRead(button3);
+
+   if(button1State == HIGH &&  button2State == HIGH &&  button1State == HIGH)
+    ClearScreen(numberGlyphs[10]);
+
+   
+    if (button1State == LOW) //LOW == pressed.
+ {
+      slider1Val = analogRead(slider1);
+      Serial.print("Slider1 value: ");
+      Serial.println(slider1Val);
+      numberOne = map(slider1Val, 0, 1030, 0, 10);
+        Serial.print("number1: ");
+      Serial.println(numberOne);
+      showNumber(numberOne);
+     }
+   
+     
+     
+      if (button2State == LOW) //LOW == pressed.
+     {
+      slider2Val = analogRead(slider2);
+      Serial.print("Slider2 value: ");
+      Serial.println(slider2Val);
+      numberTwo = map(slider2Val, 0, 1030, 0, 10);
+        Serial.print("number2: ");
+      Serial.println(numberTwo);
+      showNumber(numberTwo);
+     }
+     
+     if (button3State == LOW) //LOW == pressed.
+     {
+      slider3Val = analogRead(slider3);
+      Serial.print("Slider3 value: ");
+      Serial.println(slider3Val);
+      numberThree = map(slider3Val, 0, 1030, 0, 10);
+        Serial.print("number3: ");
+      Serial.println(numberThree);
+      showNumber(numberThree);
+     }
+     if (numberOne == matchNumberOne && numberTwo == matchNumberTwo && numberThree == matchNumberThree)
+     {
+      if(playedTheSong == false)
+      {
+      Serial.println("Congratulations! You hacked the combination");
+      for (int i = 0; i < 18; i ++)
+      {
+        if(successSongNotes[i] == 0)
+         noTone(buzzer);
+         else
+      tone(buzzer, successSongNotes[i]);
+      
+      delay(successSongTimes[i]);
+      }
+      playedTheSong = true;
+      
+     }
+     
+  }
+  }
+}
+void showNumber(int number) {
+  digitalWrite(latch, LOW); //Tells the shift register that this is the beginning of a new segment of binary code.
+   shiftOut(data, clock, MSBFIRST, (numberGlyphs[number])); //Takes a code from the array at the top and sends to the shift reg.
+   digitalWrite(latch, HIGH); //Tells the shift reg. that this is the end of the code.
+}
+void ClearScreen(int num1)
+{
+     digitalWrite(latch, LOW); //Tells the shift register that this is the beginning of a new segment of binary code.
+      shiftOut(data, clock, MSBFIRST, num1); //clear
+   digitalWrite(latch, HIGH); //Tells the shift reg. that this is the end of the code.
+}
+void startAnimation()
+{
+     digitalWrite(latch, LOW); //Tells the shift register that this is the beginning of a new segment of binary code.
+      shiftOut(data, clock, MSBFIRST, 1); //clear
+   digitalWrite(latch, HIGH); //Tells the shift reg. that this is the end of the code.
+   delay(1100);
+    ClearScreen(numberGlyphs[10]);
+       digitalWrite(latch, LOW); //Tells the shift register that this is the beginning of a new segment of binary code.
+      shiftOut(data, clock, MSBFIRST, 2); //clear
+   digitalWrite(latch, HIGH); //Tells the shift reg. that this is the end of the code.
+   delay(1100);
+    ClearScreen(numberGlyphs[10]);
+       digitalWrite(latch, LOW); //Tells the shift register that this is the beginning of a new segment of binary code.
+      shiftOut(data, clock, MSBFIRST, 3); //clear
+   digitalWrite(latch, HIGH); //Tells the shift reg. that this is the end of the code.
+   delay(1100);
+    ClearScreen(numberGlyphs[10]);
+ 
+}
+//void playSound(int buzzerPin, int i1)
+//{
+  
+//}
+
+//}
