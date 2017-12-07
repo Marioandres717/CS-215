@@ -1,0 +1,15 @@
+Mario Andres Rendon
+SID: 200370018
+CS 215
+url for login page: http://www2.cs.uregina.ca/~rendon2m/v3/login.php
+
+LIST OF FILES SUBMITTED:
+
+A4_messageAppERD.jpg  => EDR FOR ASSIGNMENT
+DBforMessageApp.txt   => TABLES CREATED IN SQL
+index.php             =>  MESSAGE LIST PAGE
+login.php             => LOGIN FOR MESSAGE APPLICATION
+logout.php            => LOGOUT OF APPLICATION, DELETES ALL SESSION VARIABLES
+msgpost.php           => CREATES A MESSAGE POST
+signup.php            => CREATE USER IN APPLICATION
+viewmsg.php           => MESSAGE REPLY AND RETRIVAL PAGE
