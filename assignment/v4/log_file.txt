@@ -1,0 +1,25 @@
+Mario Andres Rendon
+SID: 200370018
+CS-215
+my page:
+http://www2.cs.uregina.ca/~rendon2m/v3/login.php
+
+ONLY FOUR NEW FILES FROM LAST ASSIGNMENT(4), ALL OTHER FILES STAYED THE SAME. 
+EXCEPT FOR index.php A WAS ADDED BUTTON ADDED FOR CONTROLLING UPDATES
+
+updateComments.php = handles the ajax request for new comments
+updateMessages.php =  handles the ajax request for new Messages
+passgen.php = handles ajax request for 5 passcodes that are not used already
+public/js/checkUpdates.js = Event registration for messageList page (index.php)
+
+IMPORTANT!
+ALL MY AJAX JAVASCRIPT FUNCTIONS FOR MAKING THE AJAX REQUEST AND HANDLING IT ARE IN functionality.js
+THERE IS 5 NEW FUNCTIONS, ALL OF THEM ARE DEFINED AT THE BEGINNING OF THE FILE
+
+THE NEW FUNCTIONS ARE:
+
+addString -> adds the suggested passcode to the input field
+suggestPasscode -> ajax request for 5 unused passcodes
+commentUpdates -> request and handles new comments
+Updates -> request and handles new comments
+enableUpdates -> control updates button implementation
