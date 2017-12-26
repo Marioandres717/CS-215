@@ -1,4 +1,15 @@
 /*
+Basic implementation of map function
+*/
+function map(arr, callback){
+ var NewArr = [];
+	for(var i = 0; i < arr.length; i++){
+		NewArr[i] = callback(arr[i]);
+	}
+return NewArr;
+}
+
+/*
 Write a function called doubleValues which accepts an array and returns a new array with all the values in the array passed to the function doubled
 
 Examples:
