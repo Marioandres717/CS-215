@@ -4,7 +4,7 @@ Basic implementation of map function
 function map(arr, callback){
  var NewArr = [];
 	for(var i = 0; i < arr.length; i++){
-		NewArr[i] = callback(arr[i]);
+		NewArr[i] = callback(arr[i], i, arr);
 	}
 return NewArr;
 }
