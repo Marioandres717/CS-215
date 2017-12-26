@@ -97,7 +97,7 @@ Examples:
 
 function hasCertainKey(arr, key){
     return arr.every(function(value){
-        return value[key];
+        return key in value;
     });
 }
 
